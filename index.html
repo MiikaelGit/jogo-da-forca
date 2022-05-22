@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Jogo da forca</title>
+</head>
+<body>
+    <!-- DIV COM A LOGO DA ALURA -->
+    <header class="logo"><img src="img/Vector.png" alt="logo da alura"></header>
+    <main class="principal">
+        <!-- DIV PARA EXIBIR TEXTO DE VITÓRIA OU DERROTA -->
+        <div class="mensagem"></div>
+        <!-- DIVs PARA EXIBIR O CONTEÚDO PRINCIPAL (A SER ALTERADO PELO JS) -->
+        <div class="tabuleiros tabuleiro1">
+            <button class="botoes botao1" onclick="start()">Começar a jogar</button>
+        </div>
+        <div class="tabuleiros tabuleiro2">
+            <button class="botoes botao2" onclick="criaCampo()" >Adicionar nova palavra</button>
+        </div>
+        <!-- DIV PARA EXIBIR AS LETRAS QUE NÃO ESTÃO CONTIDAS NA PALAVRA A SER DESVENDADA -->
+        <div class="erros"></div>
+        <!-- DIV PARA EXIBIR OS BOTÕES DE "NOVO JOGO" E "DESISTIR"-->
+        <div class="novojogo"></div>
+        
+    </main>
+    <!-- INPUT ESCONDIDO QUE RECEBERÁ OS CARACTERES DIGITADOS -->
+    <input  type="text" class="entrada">
+</body>
+<script src="js/start.js"></script>
+<script src="js/principal.js"></script>
+<script src="js/adicionar-palavra.js"></script>
+</html>

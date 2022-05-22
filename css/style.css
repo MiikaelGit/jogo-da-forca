@@ -1,0 +1,196 @@
+body { /* CONFIGURAÇÕES GERAIS DE ESTILO */
+    background-color: #F3F5FC;
+    display: flex;
+    min-height: 90vh;
+    width: 90vw;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.logo { /* CONFIGURA A LOGO DA ALURA */
+    margin: 20px 0 0 50px ;
+}
+
+.principal { /* CONFIGURA O CONTEÚDO PRINCIPAL A SER MODIFICADO PELO JS */
+    margin: auto auto;
+    height: 100%;
+}
+
+.tabuleiros { /* CONFUGURAÇÕES GERAIS DOS TEBULEIROS */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botoes { /* CONFIGURAÇÕES GERAIS DOS BOTÕES DA TELA INICIAL */
+    display: flex;
+    border-radius: 24px;
+    width: 235px;
+    height: 80px;
+    border: #0A3871 solid 1px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+/* BOTÕES DA TELA INICIAL */
+.botao1 { 
+    color: white;
+    background: #0A3871;
+    margin-bottom: 10px;
+}
+
+.botao2 {
+    background: #F3F5FC;
+    color: #0A3871;
+}
+
+.sublinhado { /* CONFIGURA A DIV QUE VAI MOSTRAR O SUBLINHADO E AS LETRAS (ESTAS ÚLTIMAS SOMENTE SERÃO MOSTRADAS SE O JOGADOR ACERTAR) */
+    width: 30px;
+    height: 35px;
+    border-bottom: solid 5px #0A3871;
+    display: inline-block;
+    margin: 0 5px;
+    text-align: center;
+}
+.linhas { /* CONFIGURA A DIVE INTEIRA QUE VAI RECEBER AS LETRAS DENTRO DA DIV COM A CLASS "SUBLINHADO" */
+    color: #0A3871;
+    font-size: 30px;
+    text-align: center;
+}
+
+.esconder { /* ESTILO QUE TORNA AS LETRAS DA PALAVRA A SER DESVENDADA ESCONDIDAS POR PADRÃO E NÃO PERMITE SELECIONA-LAS COPIA-LAS COM O MOUSE */
+    color: #F3F5FC;
+    -webkit-touch-callout: none;  /* iPhone OS, Safari */
+    -webkit-user-select: none;    /* Chrome, Safari 3 */
+    -khtml-user-select: none;     /* Safari 2 */
+    -moz-user-select: none;       /* Firefox */
+    -ms-user-select: none;        /* IE10+ */
+    user-select: none;            /* Possível implementação no futuro */
+    /* cursor: default; */
+}
+
+.entrada{ /* TORNA O INPUT QUE VAI RECEBER AS LETRAS DIGITADAS, INVISIVEL */
+    width: 0;
+    height: 0;
+    border: none;
+    outline: none;
+}
+
+.mensagem { /* CONFIGURA TEXTO DE VITÓRIA OU DERROTA */
+    text-align: center;
+    font-size: 20px;
+    margin: 30px 0 0 0;
+}
+
+.erros { /* CONFIGURA LETRAS QUE NÃO ESTÃO CONTIDAS NA PALAVRA A SER DESVENDADA */
+    text-align: center;
+    font-size: 15px;
+    color: #0A3871;
+}
+
+.novojogo { /* CONFIGURA A DIV QUE CONTÉM OS BOTÕES DE "NOVO JOGO" E "DESISTIR" */
+    display: flex;
+    width: 40vw;
+    justify-content: space-evenly;
+}
+
+textarea { /* CONFIGURA O TEXTAREA QUE VAI RECEBER A NOVA PALAVRA ADICIONADA PELO JOGADOR */
+    border: none;
+    background-color: #F3F5FC;
+    width: 40vw;
+    height: 50vh;
+    font-size: 32px;
+    color: #0A3871;
+    outline: none;
+    resize: none;
+    margin: 150px 0 0 0;
+}
+
+textarea::placeholder { /* CONFIGURA A COR DO PLACEHOLDER DO TEXTAREA */
+    color: #0A3871;
+}
+
+.aviso { /* CONFIGURAÇÕES GERAIS DA DIV QUE VAI RECEBER O AVISO DE "NÚMERO MAXIMO DE LETRAS", ENTRE O TEXTAREA E OS BOTÕES */
+    display: flex;
+    flex-direction: row;
+    margin: 2% 0 10px 0;
+    font-size: 10.5px;
+    align-items: center;
+    width: 100%;
+}
+
+.aviso p { /* CONFIGURA SOMENTE O TEXTO DA DIV AVISO */
+    margin: 0 0 0 5px;
+}
+
+.opcoes { /* CONFIGURA A DIV QUE COMPORTA OS BOTÕES DE  */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.botao { /* CONFIGURAÇOES GERAIS DOS BOTÕES DE "SALVAR E COMEÇAR", "CANCELAR" "NOVO JOGO" E "DESISTIR"*/
+    border-radius: 24px;
+    width: 265px;
+    height: 60px;
+    border: #0A3871 solid 1px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) /* AJUSTA A TELA À RESOLUÇÃO DE TABLET */ {
+    body {
+        overflow: scroll;
+    }
+    canvas {
+        margin: 120px 0 0 0;
+        width: 300px;
+    }
+    
+    .novojogo{
+        width: 75vw;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    .botao {
+        width: 280px;
+    }
+}
+
+@media (max-width: 375px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
+    .logo {
+        margin: 0;
+    }
+    .botoes {
+        width: 200px;
+        height: 70px;
+    }
+
+    .novojogo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    textarea::placeholder {
+        font-size: 26px;
+    }
+    
+    .opcoes {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sublinhado {
+        width: 25px;
+    }
+}
