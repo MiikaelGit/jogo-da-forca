@@ -159,11 +159,11 @@ textarea::placeholder { /* CONFIGURA A COR DO PLACEHOLDER DO TEXTAREA */
     }
 
     .botao {
-        width: 280px;
+        width: 100%;
     }
 }
 
-@media (max-width: 375px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
+@media (max-width: 425px) /* AJUSTA A TELA À RESOLUÇÃO DE CELULAR */ {
     .logo {
         margin: 0;
     }
@@ -192,5 +192,19 @@ textarea::placeholder { /* CONFIGURA A COR DO PLACEHOLDER DO TEXTAREA */
     
     .sublinhado {
         width: 25px;
+    }
+}
+
+@media (max-width: 320px) {
+    canvas {
+        width: 250px;
+    }
+
+    .botao {
+        width: 250px;
+    }
+
+    textarea::placeholder {
+        font-size: 20px;
     }
 }
