@@ -9,6 +9,7 @@ var mensagem = document.querySelector(".mensagem");
 var erros;
 var mostraErros = document.querySelector(".erros");
 var novo = document.querySelector('.novojogo');
+var alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' , 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç', 'á', 'é', 'í', 'ó', 'ú', 'à', 'ã', 'õ'];
 // FUNÇÃO QUE SORTEIA AS PALAVRAS DO ARRAY "PALAVRAS" E CRIA OUTRO ARRAY COM AS LETRAS DA PALAVRA SORTEADA
 function sorteia() {
     
@@ -32,8 +33,8 @@ console.log(palavras[i]);
 
 entrada.addEventListener("input", function(){
     var conteudo = document.querySelectorAll(".sublinhado");
-        // FUNCIONALIDADE QUE NÃO PERMITE ADICIONAR LETRAS JÁ DIGITADAS ANTERIORMENTE
-        if(!caracteres.includes(this.value.toUpperCase())){
+    if(alfabeto.includes(this.value.toLowerCase())) { //VERIFICA SE O CARÁCTER DIGITADO FOI UMA LETRA PERMITIDA  
+        if(!caracteres.includes(this.value.toUpperCase())){  // FUNCIONALIDADE QUE NÃO PERMITE ADICIONAR LETRAS JÁ DIGITADAS ANTERIORMENTEs
            
             caracteres.push(this.value.toUpperCase());
 
@@ -53,6 +54,7 @@ entrada.addEventListener("input", function(){
                 
             }
         }
+    }
     // FUNCIONADADE QUE VERIFICA A VARIÁVEL "ACERTOS" E ADICIONA UMA MENSAGEM DE PARABÉNS SE A QUANTIDADE DE ACERTOS FOR IGUAL AO NÚMERO DE CARACTERES DA PALAVRA SELECIONADA
     if(acertos == palavras[i].length){
         // MODIFICA O CONTEÚDO DA DIV COM A CLASS "MENSAGEM"
